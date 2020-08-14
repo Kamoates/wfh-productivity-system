@@ -1,0 +1,104 @@
+body{
+	margin: 0;
+	padding:0;
+	font-family:sans-serif;
+	background: url("background.png") no-repeat;
+	background-color: black;
+	background-size: 2000px;
+	
+
+}
+
+
+
+body h1{
+	font-size: 40px;
+	font-family:sans-serif;
+}
+
+
+#background_ng_login{
+	width: 340px;
+	height: 600px;
+	background-color: black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: white;
+	text-align: center;
+	opacity: 0.8;
+}
+
+
+.loginBox{
+	width: 280px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: white;
+	text-align: center;
+}
+
+.loginBox h1{
+	font-size: 50px;
+	border-bottom: 3px solid white;
+	margin-bottom: 30px;
+	padding: 10px 0;
+}
+
+.textbox{
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 8px 0;
+	margin: 8px 0;
+	border-bottom: 1px solid;
+}
+
+.textbox input{
+	border: none;
+	outline: none;
+	background: none;
+	color: white;
+	font-size: 16px;
+	width: 250px;
+	float: left;
+	margin: 1px;
+}
+
+.btn{
+	width: 100%;
+	background: none;
+	border: 2px solid;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+	border-radius: 20px;
+
+}
+
+.b1{
+	color: white;
+	font-size: 20px;
+
+}
+
+.btn2{
+	width: 100%;
+	background: none;
+	border: 2px solid;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+	margin: 16px auto;
+	border-radius: 20px;
+}
+
+
+
+
+
