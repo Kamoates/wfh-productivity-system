@@ -1,9 +1,22 @@
+*{
+	box-sizing:border-box;
+}
 body{
 	font-family:sans-serif;
-	background: url("background.png") no-repeat;
+	background-color:#99B898;
+}
+footer{
+	color:white;
+	font-size:15px;
+	text-align:center;
+	background-color:#2A363B; 
+	
+	margin:200px;
+	margin-left:0px;
+	margin-right:0px;
 }
 h1{
-	background-color: #b17630;
+	background-color: #2A363B;
 	color:white;
 	margin-top:0px;
 	margin-left: 0px;
@@ -12,7 +25,7 @@ h1{
 a{
 	font-size: 30px;
 	text-decoration:none;
-	color:black;
+	color:white;
 }
 a:hover{
 	color:red;
@@ -24,20 +37,17 @@ a:visited{
 	text-decoration:underline;
 }
 p{
-	padding:10px;
+	padding:5px;
+	text-align:left;
 }
 .images{
 	float:left;
 	width:33.3%;
+	padding:5px;
+
 	height:auto;
-	
-	padding:0px;
-	box-sizing:border-box;
 
-	text-align:center;
-	margin-top:20px;
-
-	align-items: center;	
+	margin-top:50px;
 }
 .clr{
 	clear:both;
@@ -50,5 +60,12 @@ p{
 	padding:5px;
 	box-sizing:border-box;
 	text-align:center;
+
+	background-color:none;
+}
+.row:after{
+  content:"";
+  clear:both;
+  display:table;
 }
 
