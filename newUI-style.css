@@ -93,9 +93,12 @@ p{
 
 	border-bottom:1px white solid;
 
-	border:transparent;
+	border:hidden;
 }
 #content{
 	font-size: 
-	border:hidden;
+}
+h2{
+	margin-top: 0;
+	margin-left:30px;
 }
