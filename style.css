@@ -4,11 +4,10 @@ body{
 	padding:0;
 	font-family:sans-serif;
 	background: url("background.png") no-repeat;
-	background-size: 2000px;
 }
 
 body h1{
-	font-size: 40px;
+	font-size: 3px;
 	font-family:sans-serif;
 }
 
@@ -33,7 +32,6 @@ a:visited{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	color: white;
 	text-align: left;
 	opacity: 0.8;
 }
@@ -47,7 +45,7 @@ a:visited{
 	text-align: center;
 }
 .loginBox h1{
-	font-size: 50px;
+	font-size: 30px;
 	border-bottom: 3px solid white;
 	margin-bottom: 30px;
 	padding: 10px 0;
@@ -72,13 +70,14 @@ a:visited{
 }
 .btn{
 	width: 100%;
-	background: none;
 	border: 2px solid;
 	padding: 10px;
 	font-size: 20px;
 	color: white;
 	cursor: pointer;
 	border-radius: 20px;
+
+	background-color:green;
 }
 .b1{
 	color: white;
@@ -89,7 +88,6 @@ a:visited{
 	}
 .btn2{
 	width: 100%;
-	background: none;
 	border: 2px solid;
 	padding: 10px;
 	font-size: 20px;
@@ -97,6 +95,8 @@ a:visited{
 	cursor: pointer;
 	margin: 16px auto;
 	border-radius: 20px;
+
+	background-color:green;
 }
 #SignIn{
 	padding-bottom: 20px;
@@ -109,6 +109,9 @@ a:visited{
 	padding-bottom:0px;
 	padding-left:10px;
 	padding-right:10px;
+
+	max-width:100%
+	height:auto;
 }
 
 

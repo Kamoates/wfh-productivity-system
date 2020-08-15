@@ -1,18 +1,46 @@
 body{
 	font-family:sans-serif;
 	background: url("background.png") no-repeat;
-	background-size: 2000px;
 }
 h1{
-	background-color: blue;
+	background-color: #b17630;
 	color:white;
-	font-family: 
-	padding:10px;
+	margin-top:0px;
+	margin-left: 0px;
+	margin-bottom:20px;
 }
 a{
-	font-size: 50px;
+	font-size: 30px;
 	text-decoration:none;
 	color:black;
+}
+a:hover{
+	color:red;
+}
+a:active{
+	color:green;
+}
+a:visited{
+	text-decoration:underline;
+}
+p{
+	padding:10px;
+}
+.images{
+	float:left;
+	width:33.3%;
+	height:auto;
+	
+	padding:0px;
+	box-sizing:border-box;
+
+	text-align:center;
+	margin-top:20px;
+
+	align-items: center;	
+}
+.clr{
+	clear:both;
 }
 .block{
 
@@ -23,3 +51,4 @@ a{
 	box-sizing:border-box;
 	text-align:center;
 }
+
