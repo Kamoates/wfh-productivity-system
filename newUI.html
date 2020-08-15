@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,24 +6,51 @@
 		<link rel="stylesheet" type="text/css" href="newUI-style.css">
 	</head>
 	<body>
-		<!-- Side navigation -->
-		<div class="sidenav">
-			<h2>Menu</h2>
-		  <a href="#">Mail</a>
-		  <a href="#">Message</a>
-		  <a href="#">To-do-list</a>
-		</div>
-
-		<!-- Page content -->
-		<div class="main">
-			<h1>Content</h1>
-		  <p id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>
-
+		<h2>Menu</h2>
+		<div class="tab">
+	 	 	<button class="tablinks" onclick="openCity(event, 'London')">
+	 	 		Mail
+	 	 	</button>
+			<button class="tablinks" onclick="openCity(event, 'Paris')">
+				Message
+			</button>
+ 		 	<button class="tablinks" onclick="openCity(event, 'Tokyo')">
+ 		 		To-do-list
+ 		 	</button>
+		</div>		
 	</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>try</title>
+	<link rel="stylesheet" type="text/css" href="ui.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<h1>Walrus</h1>
+	<input type="checkbox" id="check">
+	<label for="check">
+		<i class="fa fa-reorder" id="bars"></i>
+		
+	</label>
+	<div class="sidebar">
+		<header>Menu</header>
+		<ul>
+			<li><a href=""><i class="fa fa-send"></i> Message</a></li>
+			<li><a href=""><i class="fa fa-envelope-o"></i> Mail</a></li>
+			<li><a href=""><i class="fa fa-list-alt"></i> To-do-list</a></li>
+			<li><a href=""><i class="fa fa-sign-out"></i> Sign out</a></li>
+
+		</ul>
+	
+	</div>
+
+	<footer id="footer">
+		<p>&copy; 2020 Walrus</p>
+	</footer>
+
+</body>
 </html>
