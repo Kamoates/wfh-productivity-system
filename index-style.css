@@ -5,8 +5,7 @@
   margin: 0;
   padding: 0;
 
-   animation: fadein 3s;
-  
+  animation: fadein 3s;
 }
 
 
@@ -70,10 +69,11 @@
 }
 /*END OF ANIMATIONS*/
 
-a:hover,a:active {
+a:hover, a:active{
   background-color: white;
   opacity: 80%;
   border: black solid 3px;
+
 }
 a:link,a:visited {
   background: gray;
@@ -107,6 +107,7 @@ li {
   animation-iteration-count: 6;
 
 }
+
 footer {
   background-color: gray;
   text-align: center;
@@ -122,6 +123,6 @@ body{
 	background-size: 1400px 800px;
 	background-repeat: no-repeat;
 
-	animation-name:none;
+	animation-name:none 0;
 
 }
