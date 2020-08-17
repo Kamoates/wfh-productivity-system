@@ -1,15 +1,16 @@
 /**GLOBAL**/
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+* {
+    font-family: 'Comfortaa', cursive;
+}
 body{
 	margin: 0;
 	padding:0;
 	font-family:sans-serif;
-	background: url("background.png") no-repeat;
-	background-size: 2000px;
+	background-color:white;
 }
-
-body h1{
+h1{
 	font-size: 3px;
-	font-family:sans-serif;
 }
 
 /**for links**/
@@ -38,7 +39,7 @@ a:visited{
 }
 .loginBox{
 	width: 280px;
-	position: absolute;
+	position: fixed;
 	top: 40%;
 	left: 50%;
 	transform: translate(-50%,-50%);
@@ -77,7 +78,6 @@ a:visited{
 	color: white;
 	cursor: pointer;
 	border-radius: 20px;
-
 	background-color:green;
 }
 .b1{
@@ -102,6 +102,7 @@ a:visited{
 #SignIn{
 	padding-bottom: 20px;
 }
+
 #wholeBody{
 	text-align: left;
 }
