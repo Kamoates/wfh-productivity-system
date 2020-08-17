@@ -7,6 +7,9 @@
     -o-animation: fadein 3s; /* Opera */
 
     box-sizing: border-box;
+
+    margin:0;
+    padding:0;
 }
 @keyframes fadein {
     from {
@@ -65,7 +68,7 @@ a:link, a:visited {
  	display: block;
   	margin-left: auto;
   	margin-right: auto; 
-  	width:75%;	
+  	width:70%;	
 }
 li{
 	list-style-type: none;
@@ -75,15 +78,23 @@ li{
 	background-size:10%;
 
 	text-align: center;
-	padding-bottom: 20px;
+	padding-top: 40px;
 
-	font-size: 15px;
+	font-size: 20px;
 }
 
 #imgContainer{
 	float:right;
 	width:50%;
 	margin-right:0px;
-	padding-left:0;
+	padding-bottom: 40px;
+}
+footer{
+	background-color:gray;
+	text-align: center;
+	padding:10px;
+	background-size:100%;
+
+	margin-top:60px;
 }
 
