@@ -43,19 +43,38 @@
         opacity: 1;
     }
 }
-h1{
-	float:right;
-	width:50%;
-	font-size: 100px;
-  	text-align: center;	
-  	margin-top: 100px;
-  	padding-bottom: 0px;  	
+@keyframes bounce { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
 }
+@keyframes spring { 
+  0% {
+    transform: scale(1) translateY(0); 
+  }
+  10% {
+    transform: scale(1.2, 0.6); 
+  }
+  30% { 
+    transform: scale(0.8, 1.1) translateY(-50px); 
+  }
+  50% { 
+    transform: scale(1) translateY(0); 
+  }
+  100% { 
+    transform: translateY(0); 
+  }
+}
+ 
+
+a{
+	
+} 
 a:hover, a:active {
    background-color: white;
    opacity: 80%;
    border: black solid 3px;
 }
+
 a:link, a:visited {
   	background: gray;
   	color: white;
@@ -69,6 +88,10 @@ a:link, a:visited {
   	margin-left: auto;
   	margin-right: auto; 
   	width:70%;	
+
+  animation: spring 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
 }
 li{
 	list-style-type: none;
@@ -81,13 +104,10 @@ li{
 	padding-top: 40px;
 
 	font-size: 20px;
-}
 
-#imgContainer{
-	float:right;
-	width:50%;
-	margin-right:0px;
-	padding-bottom: 40px;
+	animation: bounce 0.3s;
+	animation-direction: alternate;
+	animation-iteration-count: 6;
 }
 footer{
 	background-color:gray;
