@@ -7,9 +7,6 @@
     -o-animation: fadein 3s; /* Opera */
 
     box-sizing: border-box;
-
-
-}
 }
 @keyframes fadein {
     from {
@@ -51,19 +48,6 @@ h1{
   	margin-top: 100px;
   	padding-bottom: 0px;  	
 }
-/*
-p {
-	font-size:20px;
-	text-align:center;
-<<<<<<< HEAD
-	padding-left: 5px;	
-	padding-bottom: 20px;
-=======
-	padding:20px;
-
->>>>>>> 77176ed640037864d749d6d617aa6613ed95e242
-}
-*/
 a:hover, a:active {
    background-color: white;
    opacity: 80%;
@@ -89,9 +73,12 @@ li{
 	background-repeat: no-repeat;
 	background-position: 1px;
 	background-size:10%;
+
+	text-align: center;
+	padding-bottom: 20px;
+
+	font-size: 15px;
 }
-<<<<<<< HEAD
-=======
 
 #imgContainer{
 	float:right;
@@ -99,4 +86,4 @@ li{
 	margin-right:0px;
 	padding-left:0;
 }
->>>>>>> 77176ed640037864d749d6d617aa6613ed95e242
+
