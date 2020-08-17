@@ -7,6 +7,8 @@
     -o-animation: fadein 3s; /* Opera */
 
     box-sizing: border-box;
+
+
 }
 }
 @keyframes fadein {
@@ -42,44 +44,42 @@
     }
 }
 h1{
-
-	font-size: 150px;
+	float:right;
+	width:50%;
+	font-size: 100px;
   	text-align: center;	
   	margin-top: 100px;
-  	padding-bottom: 0px;
-
-  	
+  	padding-bottom: 0px;  	
 }
 p{
 	font-size:20px;
 	text-align:center;
-	padding:20px;	
+	padding-left: 5px;	
+	padding-bottom: 20px;
 }
 a:hover, a:active {
    background-color: white;
    opacity: 80%;
    border: black solid 3px;
 }
-
 a:link, a:visited {
-  background: gray;
-  color: white;
-  padding: 13px;
-  text-align: center;
-  text-decoration: none;
+  	background: gray;
+  	color: white;
+  	text-decoration: none;
 
-  border-radius:100px;
+  	border-radius:100px;
+	padding:10px;
 }
-a{
-	margin-top:20px;
-	float:left;
-	width:25%;
-	padding:20px;
+.center{
+ 	display: block;
+  	margin-left: auto;
+  	margin-right: auto; 
+  	width:75%;	
 }
-
-#imgContainer{
-	float:right;
-	width:50%;
-	margin-right:0px;
-	padding-left:0;
+li{
+	list-style-type: none;
+	background-image: url("hand_point_right.png")
+	background-repeat: no-repeat;
+	background-position: 1px;
+	background-size:10%;
 }
