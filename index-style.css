@@ -1,15 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
 * {
   font-family: "Comfortaa", cursive;
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
-
   box-sizing: border-box;
-
   margin: 0;
   padding: 0;
+
+   animation: fadein 3s;
+  
 }
 
 
@@ -99,12 +96,7 @@ a:link,a:visited {
 }
 
 li {
-  
-  background-image: url("hand_point_right.png");
-  background-repeat: no-repeat;
-  background-size: 3%;
-  padding-left:0;
-	
+  	
   list-style-type: none;
   text-align: center;
   padding-top: 40px;
@@ -115,7 +107,6 @@ li {
   animation-iteration-count: 6;
 
 }
-
 footer {
   background-color: gray;
   text-align: center;
@@ -123,4 +114,14 @@ footer {
   background-size: 100%;
 
   margin-top: 60px;
+}
+body{
+
+	background-image:url("bg.jpg");
+	background-position: center;
+	background-size: 1400px 800px;
+	background-repeat: no-repeat;
+
+	animation-name:none;
+
 }
