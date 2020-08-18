@@ -72,13 +72,12 @@ a:hover, a:active{
   background-color: white;
   opacity: 80%;
   border: black solid 3px;
-
 }
+
 a:link,a:visited {
   background: gray;
   color: white;
   text-decoration: none;
-
   border-radius: 100px;
   padding: 10px;
 }
@@ -87,7 +86,7 @@ a:link,a:visited {
   margin-left: auto;
   margin-right: auto; 
   width:30%;  
-  margin-top:20px;
+  margin-top:150px;
 
   animation: spring 4s;
   animation-timing-function: ease;
@@ -112,7 +111,6 @@ li {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: gray;
   color: white;
   text-align: center;
   padding: 10px;
@@ -126,6 +124,7 @@ input{
   font-size: 25px;
   width: 300px;
   outline: none;
+  opacity: 0.5;
 }
 
 input:hover, input:active{
