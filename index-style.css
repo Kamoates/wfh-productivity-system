@@ -108,14 +108,17 @@ li {
 
 }
 
-footer {
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: gray;
+  color: white;
   text-align: center;
   padding: 10px;
-  background-size: 100%;
-
-  margin-top: 60px;
 }
+
 body{
 
 	background-image:url("bg.jpg");
