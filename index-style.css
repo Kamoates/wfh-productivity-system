@@ -122,10 +122,8 @@ li {
 body{
 
 	background-image:url("bg.jpg");
-	background-position: center;
-	background-size: 1400px 800px;
-	background-repeat: no-repeat;
-
+	background-position: center no-repeat;
+	background-size:cover;
 	animation-name:none 0;
 
 }
