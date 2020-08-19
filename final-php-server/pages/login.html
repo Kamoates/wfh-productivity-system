@@ -23,40 +23,8 @@
   <div class="footer">
     <p>&copy; 2020 Walrus</p>
   </div>
-  <script>
-    document.getElementById("user-info").addEventListener("submit", (e) => {
-      e.preventDefault();
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      var params = `username=${username}&password=${password}`;
+  <script src="../scripts/retrieve-login-info.js">
 
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "../scripts/verify-info.php", true);
-      xhr.setRequestHeader(
-        "Content-type",
-        "application/x-www-form-urlencoded"
-      );
-      xhr.onload = function () {
-        var result = JSON.parse(this.responseText);
-        if (username == result.username && password == result.password) {
-          e.stopPropagation();
-          window.location.assign("welcome.php");
-        } else {
-          document.getElementById("warning").innerHTML = `<style>
-                #warning {
-  color: red;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 12px;
-  font-weight: bold;
-}
-                </style>
-              <p>Wrong password!*</p>`;
-        }
-      };
-
-      xhr.send(params);
-    });
   </script>
 </body>
 
