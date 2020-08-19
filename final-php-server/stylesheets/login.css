@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+* {
+  font-family: "Comfortaa", cursive;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  animation: fadein 3s;
+}
+
+/**-------------------------------------ANIMATIONS-----------------------------------------**/
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+@keyframes spring {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  10% {
+    transform: scale(1.2, 0.6);
+  }
+  30% {
+    transform: scale(0.8, 1.1) translateY(-50px);
+  }
+  50% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*-------------------------------END OF ANIMATIONS-----------------------------------*/
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  margin-top: 150px;
+
+  animation: spring 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+form {
+  list-style-type: none;
+  text-align: center;
+  padding-top: 20px;
+
+  animation: bounce 0.3s;
+  animation-direction: alternate;
+  animation-iteration-count: 6;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+input {
+  border: black solid 2px;
+  border-radius: 50px;
+  padding: 5px 10px;
+  width: 300px;
+  outline: none;
+  opacity: 0.5;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 10px;
+}
+#signin {
+  opacity: 80%;
+  border: black solid 3px;
+  background: gray;
+  color: white;
+  border-radius: 100px;
+  padding: 10px;
+  width: 150px;
+  font-size: 12px;
+}
+
+#signin:hover {
+  opacity: 100%;
+  color: black;
+}
+
+body {
+  background-image: url("../src/bg.jpg");
+  background-position: center no-repeat;
+  background-size: cover;
+
+  animation-name: none 0;
+}

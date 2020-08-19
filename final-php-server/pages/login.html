@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/login.css" />
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="contents">
+    <img src="../src/logo-walrustech-no-bg.png" class="center" />
+    <div id="warning"></div>
+    <form id="user-info">
+      <input type="text" name="username" id="username" placeholder="username" />
+      <br />
+      <input type="password" name="password" id="password" placeholder="password" />
+      <br />
+      <input id="signin" type="submit" value="Sign In" />
+    </form>
+  </div>
+  <div class="footer">
+    <p>&copy; 2020 Walrus</p>
+  </div>
+  <script>
+    document.getElementById("user-info").addEventListener("submit", (e) => {
+      e.preventDefault();
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var params = `username=${username}&password=${password}`;
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "../scripts/verify-info.php", true);
+      xhr.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+      );
+      xhr.onload = function () {
+        var result = JSON.parse(this.responseText);
+        if (username == result.username && password == result.password) {
+          e.stopPropagation();
+          window.location.assign("welcome.php");
+        } else {
+          document.getElementById("warning").innerHTML = `<style>
+                #warning {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+                </style>
+              <p>Wrong password!*</p>`;
+        }
+      };
+
+      xhr.send(params);
+    });
+  </script>
+</body>
+
+</html>
