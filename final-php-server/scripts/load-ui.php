@@ -29,4 +29,3 @@
             <p>Copyright &copy; 2020 Walrus</p>
         </footer>
     EOD;
-?>
