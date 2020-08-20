@@ -35,6 +35,6 @@ INSERT INTO `user` (`userID`, `username`, `password`, `first_name`, `last_name`,
 
 INSERT INTO `chat` (`chatID`, `userID`, `chatroomID`, `message`, `chat_date`) VALUES
 (1, 2, 1, 'Hello World', '2020-06-12'),
-(2, 3, 1, 'Hello World2', '2020-06-12')
-(3, 1, 1, 'Hello World3', '2020-06-12')
+(2, 3, 1, 'Hello World2', '2020-06-12'),
+(3, 1, 1, 'Hello World3', '2020-06-12'),
 (4, 1, 1, 'Hello World4', '2020-06-12');
