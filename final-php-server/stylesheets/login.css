@@ -110,7 +110,7 @@ input {
   padding: 5px 10px;
   width: 300px;
   outline: none;
-  opacity: 0.5;
+  opacity: 100%;
   font-size: 14px;
   color: black;
   margin-bottom: 10px;
@@ -129,6 +129,7 @@ input {
 #signin:hover {
   opacity: 100%;
   color: black;
+  cursor: pointer;
 }
 
 body {
