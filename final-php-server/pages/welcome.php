@@ -1,5 +1,10 @@
 <?php
+    // /error_reporting(E_ERROR | E_PARSE);
     session_start();
+    
+    if(!$_SESSION['userID']) {
+        $_SESSION['userID'] = $_GET['userID'];
+    }
     $pageName = 'Welcome'; 
     include_once '../scripts/load-ui.php';
 ?>

@@ -15,10 +15,10 @@
         <div class="sidebar">
             <header>Menu</header>
             <ul>
-                <li><a href="#"><i class="fa fa-send"></i> Message</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> Mail</a></li>
-                <li><a href="#"><i class="fa fa-list-alt"></i> To-do-list</a></li>
-                <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
+                <li><a href="message.php"><i class="fa fa-send"></i> Message</a></li>
+                <li><a href="mail.php"><i class="fa fa-envelope-o"></i> Mail</a></li>
+                <li><a href="to-do-list.php"><i class="fa fa-list-alt"></i> To-do-list</a></li>
+                <li><a href="sign-out.php"><i class="fa fa-sign-out"></i> Sign out</a></li>
                 </ul>
         
         </div>

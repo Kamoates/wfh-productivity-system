@@ -1,3 +1,4 @@
+<script>
 // get the form element in login.html
 document.getElementById("user-info").addEventListener("submit", (e) => {
   //to prevent reloading
@@ -7,6 +8,17 @@ document.getElementById("user-info").addEventListener("submit", (e) => {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
   var params = `username=${username}&password=${password}`;
+  var warning = `
+  <style>
+  #warning {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;  
+  }
+  </style>
+  <p>Wrong password!*</p>`;
 
   //start the request
   var xhr = new XMLHttpRequest();
@@ -22,21 +34,13 @@ document.getElementById("user-info").addEventListener("submit", (e) => {
     if (username == result.username && password == result.password) {
       //will load/run the next page
       e.stopPropagation();
-      window.location.assign("welcome.php");
+      window.location.assign(`welcome.php?userID=${result.userID}`);
     } else {
       //if the user input the wrong info this will run
-      document.getElementById("warning").innerHTML = `<style>
-              #warning {
-color: red;
-text-align: center;
-margin-top: 10px;
-font-size: 12px;
-font-weight: bold;
-}
-              </style>
-            <p>Wrong password!*</p>`;
+      document.getElementById("warning").innerHTML = warning;
     }
   };
 
   xhr.send(params);
 });
+</script>

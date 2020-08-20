@@ -23,7 +23,7 @@
   <div class="footer">
     <p>&copy; 2020 Walrus</p>
   </div>
-  <script src="../scripts/retrieve-login-info.js"></script>
+  <?php include "../scripts/retrieve-login-info.php"; ?>
 </body>
 
 </html>
