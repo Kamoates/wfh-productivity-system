@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+*{
+	font-family: "Comfortaa", cursive;
+}
+table {
+border-collapse: collapse;
+width: 30%;
+color: #588c7e;
+font-size: 30px;
+text-align: center;
+margin: 20px auto auto auto;
+}
+th {
+background-color: gray;
+color: white;
+padding: 10px;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
