@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#msgUI {
+  display: flex;
+  margin: 20px;
+  text-align: center;
+}
+
+.content {
+  margin-right: 5px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#room-list {
+  width: 100px;
+  height: 200px;
+  border: 1px black solid;
+}
+
+#main {
+  width: 250px;
+  height: 600px;
+  border: 1px black solid;
+}
+
+#room-info {
+  width: 100px;
+  height: 200px;
+  border: 1px black solid;
+}
+
+#message-box {
+  width: 230px;
+  height: 570px;
+  margin: auto;
+  border: 1px black solid;
+  overflow: scroll;
+}
+
+#chat-form {
+  margin-top: 30px;
+}
+
+#input-msg {
+  width: 200px;
+  height: 40px;
+  font-size: 10px;
+  padding: 2px;
+}
+
+#submit {
+  width: 30px;
+  height: 45px;
+  font-size: 10px;
+}
