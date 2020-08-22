@@ -80,19 +80,86 @@ roomReq.onload = function () {
     document.getElementById("room-list").appendChild(roomContainer);
     document.getElementById("room-list").appendChild(seperator);
   }
-  var style = document.createElement("style");
-  style.innerHTML = roomListStyle;
-  document.getElementById("room-list").appendChild(style);
+  var roomStyle = document.createElement("style");
+  roomStyle.innerHTML = roomListStyle;
+  document.getElementById("room-list").appendChild(roomStyle);
 };
 
 roomReq.send();
-
 //add event listener to each button
 //for (var i = 0; i < 3; i++) {
 //}
 /*
 ------------------------------------------------------------------------------------------------
 */
+//load all previous chat
+var chatReq = new XMLHttpRequest();
+chatReq.open(
+  "GET",
+  `../scripts/load-msg-from-database.php?roomNumber=${roomNumber}`,
+  true
+);
+
+chatReq.onload = function () {
+  var chats = JSON.parse(this.responseText);
+  var chatStyle = `
+            .messages {
+                color: white;
+                padding: 10px;
+            }
+
+            .user-name {
+                font-size: 14px;
+            }
+
+            .message {
+                font-size: 10px;
+                text-align: justify;
+                word-wrap: break-word;
+            }
+
+            .date-sent {
+                font-size: 8px;
+                text-align: right;
+            }
+        `;
+  for (var i = 0; i < chats.length; i++) {
+    var newChat = chats[i];
+    console.log(newChat);
+
+    var userName = document.createElement("h6");
+    userName.className = "user-name";
+    userName.innerHTML = newChat.userID;
+
+    var inMessage = document.createElement("p");
+    inMessage.className = "message";
+    inMessage.innerHTML = newChat.message;
+
+    var timestamp = document.createElement("p");
+    timestamp.className = "date-sent";
+    timestamp.innerHTML = newChat.chat_date;
+
+    var messageContainer = document.createElement("div");
+    messageContainer.className = "messages";
+    if (newChat.userID == userID) {
+      messageContainer.style =
+        "background-color: magenta;margin: 10px 10px 10px 50px;";
+    } else {
+      messageContainer.style =
+        "background-color: lightskyblue;margin: 10px 50px 10px 10px;";
+    }
+
+    messageContainer.appendChild(userName);
+    messageContainer.appendChild(inMessage);
+    messageContainer.appendChild(timestamp);
+    document.getElementById("message-box").appendChild(messageContainer);
+  }
+  var messageStyle = document.createElement("style");
+  messageStyle.innerHTML = chatStyle;
+  document.getElementById("message-box").appendChild(messageStyle);
+};
+
+chatReq.send();
 
 document.getElementById("chat-form").addEventListener("submit", (e) => {
   e.preventDefault();
