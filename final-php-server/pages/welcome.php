@@ -2,7 +2,7 @@
     error_reporting(E_ERROR | E_PARSE);
     $userID = $_GET['userID'];
     session_start();
-    if(!$_SESSION['userID']) {
+    if($userID) {
         $_SESSION['userID'] = $userID;
     }
         
