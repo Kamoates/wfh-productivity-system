@@ -1,15 +1,11 @@
 <?php
-    // /error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
+    $userID = $_GET['userID'];
     session_start();
-    try {
-        if (!$_SESSION['userID']) {
-            $_SESSION['userID'] = $_GET['userID'];
-        }
-        
-    } catch (exception $e) {
-        echo `<script>console.log($e)</script>`;
+    if(!$_SESSION['userID']) {
+        $_SESSION['userID'] = $userID;
     }
-    
+        
     $pageName = 'Welcome'; 
     include_once '../scripts/load-ui.php';
 ?>
@@ -25,6 +21,10 @@
         echo $_SESSION['userID'];
     ?>
     
-    <?php echo $footer; ?>
+    <?php 
+        echo $footer;
+        include_once '../scripts/retrieve-name.php';
+        $_SESSION['users'] = $users;
+    ?>
 </body>
 </html>

@@ -1,4 +1,5 @@
 //load all rooms
+console.log(users);
 var roomNumber = 1;
 var roomReq = new XMLHttpRequest();
 roomReq.open("GET", "../scripts/retrieve-rooms.php", true);
@@ -42,7 +43,7 @@ roomReq.onload = function () {
 
     var creator = document.createElement("p");
     creator.className = "creator";
-    creator.innerHTML = room["userID"];
+    creator.innerHTML = users[room["userID"] - 1];
 
     var dateCreated = document.createElement("p");
     dateCreated.className = "date-created";
@@ -129,7 +130,7 @@ chatReq.onload = function () {
 
     var userName = document.createElement("h6");
     userName.className = "user-name";
-    userName.innerHTML = newChat.userID;
+    userName.innerHTML = users[newChat.userID - 1];
 
     var inMessage = document.createElement("p");
     inMessage.className = "message";

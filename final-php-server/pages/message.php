@@ -18,7 +18,10 @@
         echo $body;
         echo $content;
     ?>
-    <script>var userID = <?php echo $_SESSION['userID'];?>;</script>
+    <script>
+        var userID = <?php echo $_SESSION['userID'];?>;
+        var users = <?php echo $_SESSION['users']; ?>
+    </script>
     <script src="../scripts/load-message-content.js"></script>
     <?php
         echo $footer; 
