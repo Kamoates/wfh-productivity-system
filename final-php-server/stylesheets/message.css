@@ -39,7 +39,7 @@
   height: 570px;
   margin: auto;
   border: 1px black solid;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 #chat-form {

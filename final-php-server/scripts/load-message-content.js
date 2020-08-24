@@ -168,8 +168,8 @@ function loadMessages() {
 -------------------------------------------------------------------
 */
 loadMessages();
-
-document.getElementById("chat-form").addEventListener("submit", (e) => {
+var chatForm = document.getElementById("chat-form");
+chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if ((message = document.getElementById("input-msg").value)) {
@@ -190,6 +190,7 @@ document.getElementById("chat-form").addEventListener("submit", (e) => {
 
     sendReq.send(params);
   }
+  document.getElementById("chat-form").reset();
   loadMessages();
 });
 

@@ -20,7 +20,8 @@
     ?>
     <script>
         var userID = <?php echo $_SESSION['userID'];?>;
-        var users = <?php echo $_SESSION['users']; ?>
+        var users = <?php echo $_SESSION['users']; ?>;
+        console.log(userID);
     </script>
     <script src="../scripts/load-message-content.js"></script>
     <?php
