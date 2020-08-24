@@ -94,122 +94,103 @@ roomReq.send();
 ------------------------------------------------------------------------------------------------
 */
 //load all previous chat
-var chatReq = new XMLHttpRequest();
-chatReq.open(
-  "GET",
-  `../scripts/load-msg-from-database.php?roomNumber=${roomNumber}`,
-  true
-);
+function loadMessages() {
+  document.getElementById("message-box").innerHTML = "";
+  var chatReq = new XMLHttpRequest();
+  chatReq.open(
+    "GET",
+    `../scripts/load-msg-from-database.php?roomNumber=${roomNumber}`,
+    true
+  );
+  chatReq.onload = function () {
+    var chats = JSON.parse(this.responseText);
+    var chatStyle = `
+                  .messages {
+                      color: white;
+                      padding: 10px;
+                  }
+      
+                  .user-name {
+                      font-size: 14px;
+                  }
+      
+                  .message {
+                      font-size: 10px;
+                      text-align: justify;
+                      word-wrap: break-word;
+                  }
+      
+                  .date-sent {
+                      font-size: 8px;
+                      text-align: right;
+                  }
+              `;
+    for (var i = 0; i < chats.length; i++) {
+      var newChat = chats[i];
+      // /console.log(newChat);
 
-chatReq.onload = function () {
-  var chats = JSON.parse(this.responseText);
-  var chatStyle = `
-            .messages {
-                color: white;
-                padding: 10px;
-            }
+      var userName = document.createElement("h6");
+      userName.className = "user-name";
+      userName.innerHTML = users[newChat.userID - 1];
 
-            .user-name {
-                font-size: 14px;
-            }
+      var inMessage = document.createElement("p");
+      inMessage.className = "message";
+      inMessage.innerHTML = newChat.message;
 
-            .message {
-                font-size: 10px;
-                text-align: justify;
-                word-wrap: break-word;
-            }
+      var timestamp = document.createElement("p");
+      timestamp.className = "date-sent";
+      timestamp.innerHTML = newChat.chat_date;
 
-            .date-sent {
-                font-size: 8px;
-                text-align: right;
-            }
-        `;
-  for (var i = 0; i < chats.length; i++) {
-    var newChat = chats[i];
-    console.log(newChat);
+      var messageContainer = document.createElement("div");
+      messageContainer.className = "messages";
+      if (newChat.userID == userID) {
+        messageContainer.style =
+          "background-color: magenta;margin: 10px 10px 10px 50px;";
+      } else {
+        messageContainer.style =
+          "background-color: lightskyblue;margin: 10px 50px 10px 10px;";
+      }
 
-    var userName = document.createElement("h6");
-    userName.className = "user-name";
-    userName.innerHTML = users[newChat.userID - 1];
-
-    var inMessage = document.createElement("p");
-    inMessage.className = "message";
-    inMessage.innerHTML = newChat.message;
-
-    var timestamp = document.createElement("p");
-    timestamp.className = "date-sent";
-    timestamp.innerHTML = newChat.chat_date;
-
-    var messageContainer = document.createElement("div");
-    messageContainer.className = "messages";
-    if (newChat.userID == userID) {
-      messageContainer.style =
-        "background-color: magenta;margin: 10px 10px 10px 50px;";
-    } else {
-      messageContainer.style =
-        "background-color: lightskyblue;margin: 10px 50px 10px 10px;";
+      messageContainer.appendChild(userName);
+      messageContainer.appendChild(inMessage);
+      messageContainer.appendChild(timestamp);
+      document.getElementById("message-box").appendChild(messageContainer);
     }
+    var messageStyle = document.createElement("style");
+    messageStyle.innerHTML = chatStyle;
+    document.getElementById("message-box").appendChild(messageStyle);
+  };
 
-    messageContainer.appendChild(userName);
-    messageContainer.appendChild(inMessage);
-    messageContainer.appendChild(timestamp);
-    document.getElementById("message-box").appendChild(messageContainer);
-  }
-  var messageStyle = document.createElement("style");
-  messageStyle.innerHTML = chatStyle;
-  document.getElementById("message-box").appendChild(messageStyle);
-};
+  chatReq.send();
+}
 
-chatReq.send();
+/*
+-------------------------------------------------------------------
+*/
+loadMessages();
 
 document.getElementById("chat-form").addEventListener("submit", (e) => {
   e.preventDefault();
 
   if ((message = document.getElementById("input-msg").value)) {
-    var dateNow = new Date();
-    var params = `userID=${userID}&content=${message}&date=${dateNow}`;
+    var params = `userID=${userID}&chatroomID=${roomNumber}&content=${message}`;
+    console.log(params);
 
     //start xhr
-    // var xhr = new XMLHttpRequest();
-    // xhr.open("POST", "../scripts/add-msg-to-database.php", true);
-    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var sendReq = new XMLHttpRequest();
+    sendReq.open("POST", "../scripts/add-msg-to-database.php", true);
+    sendReq.setRequestHeader(
+      "Content-type",
+      "application/x-www-form-urlencoded"
+    );
 
-    var chatTemp = `
-        <div class="messages">
-            <h6 class="user-name">John Doe</h6>
-            <p class="message">${message}</p>
-            <p class="date-sent">${dateNow.toISOString()}<p>
-        </div>
-        `;
+    sendReq.onload = function () {
+      console.log(this.responseText);
+    };
 
-    var chatStyle = `
-        <style>
-            .messages {
-                margin: 10px 50px 10px 10px;
-                color: white;
-                background-color: lightskyblue;
-                padding: 10px;
-            }
-
-            .user-name {
-                font-size: 14px;
-            }
-
-            .message {
-                font-size: 10px;
-                text-align: justify;
-                word-wrap: break-word;
-            }
-
-            .date-sent {
-                font-size: 8px;
-                text-align: right;
-            }
-        </style>
-        `;
-
-    document.getElementById("message-box").innerHTML += chatTemp + chatStyle;
+    sendReq.send(params);
   }
+  loadMessages();
 });
 
 var roomInfoTemp = `
