@@ -1,21 +1,83 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>To-do-list</title>
-		<link rel="stylesheet" type="text/css" href="to-do-list.css">
-	</head>
-	<body>
-		<table>
-			<tr>
-				<th>No.</th>
-				<th>To-do-list</th>
-			</tr>
-			<tr>
+<html>	
+<head>
+	<title>to-do-list</title>
+	<link rel="stylesheet" type="text/css" href="to-do-list.css">
+	<script type="text/javascript">
+		// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
 
-		</table>
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
-		<td>Owner</td>
-		<td>
-		<select name="owner">
-	</body>
-	</html>
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+	</script>
+</head>
+
+
+<body>
+<div id="myDIV" class="header">
+  <h2>To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li>Make proposal</li>
+  <li class="checked">Make report</li>
+  <li>Submit report</li>
+  <li>Check mail on Monday</li>
+  <li>Attend meeting at 8 p.m</li>
+  <li>Organize office</li>
+</ul>
+</body>
+
+</html>
