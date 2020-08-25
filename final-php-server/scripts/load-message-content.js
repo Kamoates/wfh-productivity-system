@@ -1,6 +1,13 @@
 //load all rooms
-console.log(users);
-var roomNumber = 1;
+var roomNumber = 0;
+function setEventListeners(id, value) {
+  document.getElementById(id).addEventListener("click", () => {
+    roomNumber = value;
+    console.log(roomNumber);
+    loadMessages();
+  });
+}
+
 var roomReq = new XMLHttpRequest();
 roomReq.open("GET", "../scripts/retrieve-rooms.php", true);
 
@@ -34,7 +41,7 @@ roomReq.onload = function () {
             width: 20px
         }`;
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < roomList.length; i++) {
     var room = roomList[i];
 
     var roomName = document.createElement("h6");
@@ -53,6 +60,7 @@ roomReq.onload = function () {
     button.className = "btn";
     button.id = "btn" + room["chatroomID"].toString();
     button.innerHTML = "GO";
+    button.value = i + 1;
 
     var details = document.createElement("div");
     details.className = "details";
@@ -84,6 +92,11 @@ roomReq.onload = function () {
   var roomStyle = document.createElement("style");
   roomStyle.innerHTML = roomListStyle;
   document.getElementById("room-list").appendChild(roomStyle);
+
+  //set event listener
+  setEventListeners("btn1", 1);
+  setEventListeners("btn2", 2);
+  setEventListeners("btn3", 3);
 };
 
 roomReq.send();
