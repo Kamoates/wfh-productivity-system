@@ -17,26 +17,26 @@
 }
 
 #room-list {
-  width: 100px;
+  width: 250px;
   height: 200px;
   border: 1px black solid;
 }
 
 #main {
-  width: 250px;
+  width: 500px;
   height: 600px;
   border: 1px black solid;
 }
 
 #room-info {
-  width: 100px;
-  height: 200px;
+  width: 200px;
+  height: 400px;
   border: 1px black solid;
 }
 
 #message-box {
-  width: 230px;
-  height: 570px;
+  width: 430px;
+  height: 550px;
   margin: auto;
   border: 1px black solid;
   overflow-y: auto;
@@ -47,7 +47,7 @@
 }
 
 #input-msg {
-  width: 200px;
+  width: 450px;
   height: 40px;
   font-size: 10px;
   padding: 2px;

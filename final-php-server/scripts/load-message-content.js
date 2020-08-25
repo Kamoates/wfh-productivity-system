@@ -18,6 +18,17 @@ roomReq.onload = function () {
         .room {
             display: flex;
             text-align: left;
+            align-content: center;
+            margin-top: 10px;
+        }
+
+        .content h5 {
+          margin-bottom: 20px;
+        }
+
+        .details {
+          margin-left: 30px;
+          margin-right: 20px;
         }
 
         .room-name {
