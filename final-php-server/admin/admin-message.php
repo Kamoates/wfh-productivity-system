@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php echo $head; ?>
+    <?php echo $headAdmin; ?>
     <link rel="stylesheet" href="../stylesheets/message.css">
 </head>
 </head>
 <body>
     <?php 
-        echo $body;
+        echo $bodyAdmin;
         echo $content;
     ?>
     <script>

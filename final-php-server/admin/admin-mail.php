@@ -7,12 +7,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php echo $head; ?>
+    <?php echo $headAdmin; ?>
 </head>
 </head>
 <body>
     <?php 
-        echo $body;
+        echo $bodyAdmin;
     ?>
     <div id="mail-box">
     </div>

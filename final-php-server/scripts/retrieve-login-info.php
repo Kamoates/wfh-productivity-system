@@ -34,7 +34,13 @@ document.getElementById("user-info").addEventListener("submit", (e) => {
     if (username == result.username && password == result.password) {
       //will load/run the next page
       e.stopPropagation();
-      window.location.assign(`welcome.php?userID=${result.userID}`);
+      if (result.access=='1') {
+        window.location.assign(`../admin/admin-page.php?userID=${result.userID}`);
+      }
+      else {
+        window.location.assign(`welcome.php?userID=${result.userID}`);
+      }
+      
     } else {
       //if the user input the wrong info this will run
       document.getElementById("warning").innerHTML = warning;

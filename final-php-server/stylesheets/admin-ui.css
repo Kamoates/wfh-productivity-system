@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
+* {
+  margin: 0;
+  padding: 0 0 0 0;
+  font-family: "Comfortaa", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body h1 {
+  font-size: 30px;
+  font-weight: lighter;
+  background: black;
+  color: white;
+  line-height: 60px;
+  text-align: center;
+}
+
+.header a {
+  font-family: "Gochi Hand", cursive;
+}
+
+.header a:hover {
+  color: goldenrod;
+}
+
+.header a:visited {
+  color: inherit;
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background-color: black;
+  opacity: 80%;
+  transition: 0.5s;
+  overflow: auto;
+}
+
+.sidebar header {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  user-select: none;
+  border-bottom: 1px solid white;
+}
+
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 16px;
+  color: white;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+  transition: 0.4s;
+}
+
+ul li:hover a {
+  padding-left: 40px;
+}
+
+.sidebar ul a i {
+  margin-right: 16px;
+}
+
+#check {
+  display: none;
+}
+
+label #bars {
+  position: absolute;
+  cursor: pointer;
+}
+
+label #bars {
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: blue;
+  padding: 6px 12px;
+}
+
+label #bars {
+  z-index: 1111;
+  left: 10px;
+  top: 5px;
+  font-size: 30px;
+  color: white;
+}
+
+#check:checked ~ .sidebar {
+  left: 0px;
+}
+
+#footer {
+  font-size: 10px;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}

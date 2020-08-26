@@ -1,0 +1,37 @@
+#container {
+  width: 500px;
+  height: 670px;
+  border: 1px black solid;
+  margin: 5px auto;
+}
+
+#container form {
+  display: grid;
+  width: 450px;
+  height: 650px;
+  margin: auto;
+  margin-top: 25px;
+}
+
+#subject {
+  height: 30px;
+  padding-left: 10px;
+}
+
+#content {
+  height: 500px;
+  padding: 10px;
+  /* text-align: justify;
+    word-wrap: break-word; */
+  font-style: inherit;
+  resize: none;
+}
+
+#send {
+  height: 30px;
+  width: 50px;
+  background-color: goldenrod;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}

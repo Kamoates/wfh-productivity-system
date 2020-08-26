@@ -5,7 +5,8 @@
     if($userID) {
         $_SESSION['userID'] = $userID;
     }
-        
+    
+    $_SESSION['access'] = FALSE;
     $pageName = 'Welcome'; 
     include_once '../scripts/load-ui.php';
 ?>
@@ -17,8 +18,7 @@
 </head>
 <body>
     <?php 
-        echo $body; 
-        echo $_SESSION['userID'];
+        echo $body;
     ?>
     
     <?php 
