@@ -25,7 +25,6 @@
     </div>
     <script>
         var userID = Number(<?php echo $_SESSION['userID']?>);
-        console.log(typeof userID);
     </script>
     <script src="../scripts/submit-mail.js"></script>
     <?php

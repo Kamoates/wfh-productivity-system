@@ -1,0 +1,87 @@
+#container {
+  border: 1px black solid;
+  width: 750px;
+  height: 500px;
+  display: flex;
+  margin: 20px auto;
+}
+
+#mails {
+  border: 1px black solid;
+  width: 200px;
+  height: inherit;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#content {
+  border: 1px black solid;
+  width: 530px;
+  height: 480px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+#content .header {
+  text-align: center;
+}
+
+#header {
+  text-align: center;
+  padding: 0 30px;
+}
+
+.mail {
+  width: 180px;
+  height: 100px;
+  border: 1px black solid;
+  margin: auto 0;
+  display: flex;
+}
+
+.mail button {
+  border: none;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  height: 30px;
+  margin: auto 0;
+}
+
+.text {
+  margin: 0 10px;
+}
+
+.username {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.subject {
+  font-size: 10px;
+  text-align: center;
+}
+
+.date {
+  font-size: 8px;
+  text-align: center;
+}
+
+.body-username {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.body-subject {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.content {
+  border: 1px black solid;
+  padding: 30px 10px;
+  text-align: justify;
+  font-size: 12px;
+}
