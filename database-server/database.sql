@@ -23,6 +23,14 @@ CREATE TABLE `user` (
     `access` BOOLEAN
 );
 
+CREATE TABLE `mails` (
+    `mailID` INT AUTO_INCREMENT PRIMARY KEY,
+    `userID` INT,
+    `subject` VARCHAR(40),
+    `content` VARCHAR(200),
+    `date` DATE
+);
+
 INSERT INTO `chatroom` (`chatroomID`, `room_name`, `date_created`, `chat_password`, `userID`) VALUES
 (1, 'My First Chat Room', '2017-09-11', 'suckdick', 2),
 (2, 'Free Entrance :)', '2017-09-11', '', 3),
