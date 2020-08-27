@@ -73,7 +73,7 @@ function generateMailContent(username, subject, content, date) {
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "../scripts/retrieve-mails.php", true);
 xhr.onload = function () {
-  var results = JSON.parse(this.responseText);
+  var results = JSON.parse(this.responseText).reverse();
 
   for (let result of results) {
     let mailInstance = generateMailList(
