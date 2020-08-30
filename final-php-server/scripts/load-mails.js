@@ -85,7 +85,7 @@ xhr.onload = function () {
     mailInstance.addEventListener("click", (e) => {
       e.preventDefault();
       let mailInstance = generateMailContent(
-        result.userID,
+        users[result.userID - 1],
         result.subject,
         result.content.replace(/[||]+/gm, "\n\n"),
         result.date

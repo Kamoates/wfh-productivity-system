@@ -4,14 +4,15 @@ document.getElementById("mail-form").addEventListener("submit", (e) => {
   var params = `userID=${userID}&subject=${
     subject.value
   }&content=${content.value.replace(/[\r\n]+/gm, "||")}`;
-  console.log(params);
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "../scripts/mail-to-database.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function () {
-    console.log(this.responseText);
+    var message = this.responseText;
+    alert(message);
+    document.getElementById("mail-form").reset();
   };
 
   xhr.send(params);
