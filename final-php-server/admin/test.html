@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <style>
+        * {
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Task</h1>
+        <hr>
+        <div class="form-group">
+            <form name="add_task" id="add_task">
+                <table id="dynamic_field">
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Task Description</th>
+                        <th>Task Type</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="name[]"></td>
+                        <td><input type="text" name="description[]"></td>
+                        <td><select name="type[]">
+                                <option value="creating exams">Creating exams</option>
+                                <option value="computing grades">Computing grades</option>
+                                <option value="attending classes">Attend Class</option>
+                                <option value="attend meeting">Attend Meeting</option>
+                            </select></td>
+                        <td><button type="button" name="add" id="add">Add</button></td>
+                    </tr>
+                </table>
+                <input type="button" name="submit" id="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(() => {
+        var i = 1;
+        $('#add').click(() => {
+            i++;
+            $('#dynamic_field').append(`<tr id="row${i}">
+                        <td><input type="text" name="name[]"></td>
+                        <td><input type="text" name="description[]"></td>
+                        <td><select name="type[]">
+                                <option value="creating exams">Creating exams</option>
+                                <option value="computing grades">Computing grades</option>
+                                <option value="attending classes">Attend Class</option>
+                                <option value="attend meeting">Attend Meeting</option>
+                            </select></td>
+                        <td><button type="button" name="remove" id="${i}" class="btn_remove">X</button></td>
+                    </tr>`);
+        });
+
+        $(document).on('click', '.btn_remove', function () {
+            var button_id = $(this).attr("id");
+            $(`#row${button_id}`).remove();
+        });
+
+        $('#submit').click(function () {
+            $.ajax({
+                url: "name.php",
+                type: "POST",
+                data: $('#add_task').serialize(),
+                success: function (data) {
+                    console.log(data);
+                    $('#add_task')[0].reset();
+                }
+            });
+        });
+    });
+</script>
