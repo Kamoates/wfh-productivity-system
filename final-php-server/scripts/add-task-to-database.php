@@ -9,7 +9,8 @@
             $name = $task['taskName'];
             $description = $task['description'];
             $time = $task['time'];
-            $query = "INSERT INTO tasks(name, description, time, userID) VALUES('$name', '$description', $time, $id);";
+            $taskID = $task['taskID'];
+            $query = "INSERT INTO tasks(taskID, name, description, time, start_time, userID) VALUES($taskID,'$name', '$description', $time, NOW(), $id);";
             $result = mysqli_query($conn, $query);
             if(!$result){
                 echo "Something goes wrong!";

@@ -9,14 +9,20 @@
     $index = 0;
 
     while ($index < count($type)) {
-        $query = "SELECT avg_time FROM task_avg WHERE task_name='$type[$index]';";
-        $result = mysqli_fetch_assoc(mysqli_query($conn, $query));
-        $objectInstance = array(
-            "taskName" => $task[$index],
-            "description" => $description[$index],
-            "time" => $result["avg_time"]
-        );
-        array_push($export, $objectInstance);
+        $query = "SELECT * FROM task_avg WHERE task_name='$type[$index]';";
+        $result = mysqli_query($conn, $query);
+
+        while($row = mysqli_fetch_assoc($result)) {
+            $objectInstance = array(
+                "taskID" => $row["task_id"],
+                "taskName" => $task[$index],
+                "description" => $description[$index],
+                "time" => $row["avg_time"]
+            );
+            array_push($export, $objectInstance);
+        }
+        
+        
         $index++;
     }
 

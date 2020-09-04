@@ -42,7 +42,6 @@
             <ul>
                 <li><a href="admin-message.php"><i class="fa fa-send"></i>Message</a></li>
                 <li><a href="admin-mail.php"><i class="fa fa-envelope-open"></i> Inbox</a></li>
-                <li><a href="live-conference.php"><i class="fa fa-video-camera"></i>Live conference</a></li>
                 <li><a href="send-mail.php"><i class="fa fa-envelope-o"></i> Send mail</a></li>
                 <li><a href="view-stats.php"><i class="fa fa-bar-chart-o"></i> View stats</a></li>
                 <li><a href="../pages/sign-out.php"><i class="fa fa-sign-out"></i> Sign out</a></li>

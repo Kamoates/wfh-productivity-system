@@ -21,13 +21,25 @@
     <?php echo $headAdmin; ?>
     <link rel="stylesheet" href="../stylesheets/mail.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="../scripts/distribute-task.js">
-        
-    </script>
+    <script src="../scripts/distribute-task.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        .task-instances {
+            font-size: 12px;
+            font-weight: 100;
+        }
+    </style>
 </head>
 </head>
 <body>
     <?php echo $bodyAdmin;?>
+    <div id="view-task">
+        <button id="view-task-btn">View tasks</button>
+        
+    
+    </div>
     <div class="container">
         <br>    
         <h2>Add Task</h2>
@@ -84,6 +96,40 @@
         $(document).on('click', '.btn_remove', function () {
             var button_id = $(this).attr("id");
             $(`#row${button_id}`).remove();
+        });
+
+        $('#view-task-btn').click(() => {
+            document.getElementById("view-task-btn").disabled = "disabled";
+            $('#view-task').append(
+                `<h2>All Tasks</h2>
+                <table id="task-table">
+                    <tr>
+                        <th>#</th>
+                        <th>User ID</th>
+                        <th>Task Name</th>
+                        <th>Description</th>
+                        <th>Expected time to finish</th>
+                    </tr>
+                </table>`
+            );
+            var req = new XMLHttpRequest();
+            req.open("GET", "../scripts/retrieve-all-task.php");
+            req.onload = function () {
+                let taskInfo = JSON.parse(this.responseText);
+                for(let taskInstance of taskInfo) {
+                    $('#task-table').append(
+                        `<tr class="task-instances">
+                            <th>${taskInstance.id}</th>
+                            <th>${taskInstance.userID}</th>
+                            <th>${taskInstance.name}</th>
+                            <th>${taskInstance.description}</th>
+                            <th>${taskInstance.time}</th>
+                        </tr>`
+                    );
+                }
+            }; 
+            req.send();
+            
         });
 
         $('#submit').click(function () {
